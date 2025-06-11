@@ -1,85 +1,62 @@
-/**
-* PHP Email Form Validation - v3.9
-* URL: https://bootstrapmade.com/php-email-form/
-* Author: BootstrapMade.com
-*/
-(function () {
-  "use strict";
+<?php
 
-  let forms = document.querySelectorAll('.php-email-form');
+header('Content-Type: application/json');
 
-  forms.forEach( function(e) {
-    e.addEventListener('submit', function(event) {
-      event.preventDefault();
+// Set your receiving email address
+$receiving_email_address = 'alhassan.hossny@gmail.com';
 
-      let thisForm = this;
+// Function to sanitize input
+function sanitize_input($data) {
+    return htmlspecialchars(stripslashes(trim($data)), ENT_QUOTES, 'UTF-8');
+}
 
-      let action = thisForm.getAttribute('action');
-      let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
-      
-      if( ! action ) {
-        displayError(thisForm, 'The form action property is not set!');
-        return;
-      }
-      thisForm.querySelector('.loading').classList.add('d-block');
-      thisForm.querySelector('.error-message').classList.remove('d-block');
-      thisForm.querySelector('.sent-message').classList.remove('d-block');
-
-      let formData = new FormData( thisForm );
-
-      if ( recaptcha ) {
-        if(typeof grecaptcha !== "undefined" ) {
-          grecaptcha.ready(function() {
-            try {
-              grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
-              .then(token => {
-                formData.set('recaptcha-response', token);
-                php_email_form_submit(thisForm, action, formData);
-              })
-            } catch(error) {
-              displayError(thisForm, error);
+// Check if form is submitted via POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    try {
+        // Validate required fields
+        $required = ['name', 'email', 'message'];
+        foreach ($required as $field) {
+            if (empty($_POST[$field])) {
+                throw new Exception("Please fill all required fields.");
             }
-          });
-        } else {
-          displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
         }
-      } else {
-        php_email_form_submit(thisForm, action, formData);
-      }
-    });
-  });
 
-  function php_email_form_submit(thisForm, action, formData) {
-    fetch(action, {
-      method: 'POST',
-      body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
-    })
-    .then(response => {
-      if( response.ok ) {
-        return response.text();
-      } else {
-        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
-      }
-    })
-    .then(data => {
-      thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
-        thisForm.querySelector('.sent-message').classList.add('d-block');
-        thisForm.reset(); 
-      } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
-      }
-    })
-    .catch((error) => {
-      displayError(thisForm, error);
-    });
-  }
+        // Sanitize inputs
+        $name = sanitize_input($_POST['name']);
+        $email = filter_var(sanitize_input($_POST['email']), FILTER_VALIDATE_EMAIL);
+        $subject = isset($_POST['subject']) ? sanitize_input($_POST['subject']) : 'No Subject';
+        $message = sanitize_input($_POST['message']);
 
-  function displayError(thisForm, error) {
-    thisForm.querySelector('.loading').classList.remove('d-block');
-    thisForm.querySelector('.error-message').innerHTML = error;
-    thisForm.querySelector('.error-message').classList.add('d-block');
-  }
+        if (!$email) {
+            throw new Exception("Please enter a valid email address.");
+        }
 
-})();
+        // Prepare email content
+        $email_content = "Name: $name\n";
+        $email_content .= "Email: $email\n";
+        $email_content .= "Subject: $subject\n\n";
+        $email_content .= "Message:\n$message\n";
+
+        // Prepare headers
+        $headers = "From: $name <$email>\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+        // Send email
+        $mail_sent = mail($receiving_email_address, $subject, $email_content, $headers);
+
+        if ($mail_sent) {
+            echo json_encode(['success' => true, 'message' => 'Your message has been sent. Thank you!']);
+        } else {
+            throw new Exception("Failed to send email. Please try again later.");
+        }
+    } catch (Exception $e) {
+        http_response_code(400);
+        echo json_encode(['success' => false, 'message' => $e->getMessage()]);
+    }
+} else {
+    http_response_code(405);
+    echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+}
+exit;
+?>
