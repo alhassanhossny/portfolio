@@ -111,6 +111,14 @@
   new PureCounter();
 
   /**
+   * PDF Download Button
+   */
+  document.querySelector('.download-btn').addEventListener('click', function(e) {
+  // Optional: Track download with analytics here
+  window.open('alhassanhossny.pdf', '_blank'); // Or use a fetch/blob for advanced handling
+});
+
+  /**
    * Animate the skills items on reveal
    */
   let skillsAnimation = document.querySelectorAll('.skills-animation');
