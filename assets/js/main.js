@@ -10,6 +10,91 @@
   "use strict";
 
   /**
+   * Language & Theme Toggles
+   */
+  const themeToggle = document.getElementById('theme-toggle');
+  const langToggle = document.getElementById('lang-toggle');
+
+  // Theme Logic
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  themeToggle.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  });
+
+  // Language Logic
+  const savedLang = localStorage.getItem('lang') || 'en';
+  document.documentElement.setAttribute('lang', savedLang);
+  document.documentElement.setAttribute('dir', savedLang === 'ar' ? 'rtl' : 'ltr');
+
+  async function applyTranslations(lang) {
+    const response = await fetch('assets/data/content.json');
+    const data = await response.json();
+    const translations = data[lang];
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const i18nKey = el.getAttribute('data-i18n');
+      const keys = i18nKey.split('.');
+      let val = translations;
+
+      // Navigate to the correct nested object
+      for (let i = 0; i < keys.length; i++) {
+        val = val[keys[i]];
+      }
+
+      if(val) el.innerText = val; // Using innerText to ensure it updates existing content
+    });
+  }
+
+  langToggle.addEventListener('click', async () => {
+    const currentLang = document.documentElement.getAttribute('lang') || 'en';
+    const newLang = currentLang === 'en' ? 'ar' : 'en';
+    document.documentElement.setAttribute('lang', newLang);
+    document.documentElement.setAttribute('dir', newLang === 'ar' ? 'rtl' : 'ltr');
+    localStorage.setItem('lang', newLang);
+    await applyTranslations(newLang);
+  });
+
+  // Apply on load
+  window.addEventListener('load', async () => {
+    try {
+      await applyTranslations(savedLang);
+    } catch (err) {
+      console.error("Translation failed:", err);
+    } finally {
+      const preloader = document.querySelector('#preloader');
+      if (preloader) {
+        preloader.remove();
+      }
+    }
+  });
+
+  // Fail-safe: Force hide preloader after 5 seconds
+  setTimeout(() => {
+    const preloader = document.querySelector('#preloader');
+    if (preloader) {
+      preloader.style.opacity = '0';
+      setTimeout(() => preloader.remove(), 500);
+    }
+  }, 5000);
+
+  /**
+   * Scroll Progress Bar
+   */
+  window.onscroll = function() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    const progressBar = document.getElementById("myBar");
+    if (progressBar) {
+      progressBar.style.width = scrolled + "%";
+    }
+  };
+
+  /**
    * Header toggle
    */
   const headerToggleBtn = document.querySelector('.header-toggle');
@@ -44,16 +129,6 @@
       e.stopImmediatePropagation();
     });
   });
-
-  /**
-   * Preloader
-   */
-  const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
 
   /**
    * Scroll top button

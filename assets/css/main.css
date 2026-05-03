@@ -20,12 +20,21 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #272829; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #45505b; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #0563bb; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --background-color: #ffffff;
+  --default-color: #272829;
+  --heading-color: #45505b;
+  --accent-color: #0563bb;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+}
+
+[data-theme='dark'] {
+  --background-color: #121212;
+  --default-color: #e0e0e0;
+  --heading-color: #ffffff;
+  --accent-color: #3498db;
+  --surface-color: #1e1e1e;
+  --contrast-color: #ffffff;
 }
 
 /* Download button Style */
@@ -168,44 +177,39 @@ h6 {
   }
 }
 
-/*--------------------------------------------------------------
-# Global Header
---------------------------------------------------------------*/
+/* Sticky Header UI */
 .header {
-  color: var(--default-color);
   position: fixed;
   top: 0;
-  left: 0;
-  bottom: 0;
-  padding: 0 15px;
-  transition: all ease-in-out 0.3s;
-  overflow-y: auto;
-  z-index: 997;
-  min-width: 200px;
+  width: 100%;
+  height: 80px;
+  background: var(--background-color);
+  z-index: 9997;
+  padding: 0 30px;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  flex-direction: row !important;
+  justify-content: space-between !important;
 }
 
-@media (max-width: 1199px) {
-  .header {
-    background-color: var(--background-color);
-    border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    width: 300px;
-    left: -100%;
-  }
+.header .navmenu ul {
+  display: flex;
+  flex-direction: row;
+  width: auto;
 }
 
-@media (min-width: 1200px) and (max-width: 1600px) {
-  .header~main {
-    margin-left: 160px;
-  }
-
-  .header~main .hero {
-    margin-left: -160px;
-    width: 100vw;
-  }
+.header .navmenu a {
+  height: auto;
+  margin: 0 10px;
 }
 
-.header.header-show {
-  left: 0;
+/* Footer Dark Mode Polish */
+[data-theme='dark'] .footer {
+  background-color: var(--surface-color);
+  border-top: 1px solid #333;
+}
+[data-theme='dark'] .footer .copyright,
+[data-theme='dark'] .footer .credits {
+  color: #aaa;
 }
 
 .header .header-toggle {
@@ -436,13 +440,29 @@ h6 {
   bottom: 15px;
 }
 
-/*--------------------------------------------------------------
-# Disable aos animation delay on mobile devices
---------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
+/* Reading Progress Bar */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #ccc;
+  z-index: 10000;
+}
+.progress-bar-top {
+  height: 4px;
+  background: var(--accent-color);
+  width: 0%;
+}
+
+/* Portfolio Badges */
+.tech-tags {
+  margin-top: 10px;
+}
+.badge {
+  font-size: 0.75rem;
+  margin-right: 5px;
 }
 
 /*--------------------------------------------------------------

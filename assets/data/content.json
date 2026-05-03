@@ -1,0 +1,22 @@
+{
+  "en": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "resume": "Resume",
+      "portfolio": "Portfolio",
+      "services": "Services",
+      "contact": "Contact"
+    }
+  },
+  "ar": {
+    "nav": {
+      "home": "الرئيسية",
+      "about": "نبذة عني",
+      "resume": "سيرتي الذاتية",
+      "portfolio": "معرض الأعمال",
+      "services": "الخدمات",
+      "contact": "تواصل معي"
+    }
+  }
+}
