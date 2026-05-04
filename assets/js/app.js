@@ -301,19 +301,39 @@
     if (!formWrap) return;
     formWrap.addEventListener('submit', function (e) {
       e.preventDefault();
-      const formData = new FormData(this);
-      fetch('https://formspree.io/f/xldoyazl', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
-        .then(r => {
-          if (r.ok) {
-            this.reset();
-            alert(i18n.data.contact.form_success);
-          }
-        }).catch(() => {});
+
+      const btn = $('button[type="submit"]', this);
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
+      btn.disabled = true;
+
+      const templateParams = {
+        name: this.name.value,
+        email: this.email.value,
+        subject: this.subject.value,
+        title: this.subject.value, // Added for auto-reply template
+        message: this.message.value,
+        time: new Date().toLocaleString()
+      };
+
+      emailjs.send('service_6eh4e5h', 'template_8j1w8uh', templateParams)
+        .then(() => {
+          this.reset();
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+          alert(i18n.data.contact.form_success);
+        }, (error) => {
+          console.error('FAILED...', error);
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+          alert('Failed to send message. Please try again later.');
+        });
     });
   }
 
   // ===== Init =====
   function init() {
+    emailjs.init("dFSjZ_6Ak-ClWwLbI");
     Theme.init();
     i18n.setLang(i18n.lang);
     render();
