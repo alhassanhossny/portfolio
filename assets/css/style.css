@@ -1218,6 +1218,9 @@ textarea.form-control {
   .section {
     padding: 70px 0;
   }
+  .hero .container{
+    gap:20px;
+  }
 
   .hero-name {
     font-size: 2rem;

@@ -41,12 +41,11 @@ const translations = {
       title: "Experience",
       subtitle: "My professional journey",
       jobs: [
-        { role: "Senior Software Engineer", company: "Abdin Pharmacies", url: "https://abdin.com", period: "Apr 2026 — Present", type: "Full Time", tasks: ["Odoo 17, 18, and 19 module development and customization using Python.", "Collaborate with functional consultants to translate business requirements into architecture.", "Version control (Git) for clean, maintainable, and debuggable code."] },
-        { role: "Senior System Administrator", company: "Dar Elteb Hospital", url: "https://dar-elteb.com", period: "Jul 2025 — Mar 2026", type: "Full Time", tasks: ["Manage, monitor, and maintain server, network, and application integrity.", "Ensure data security and regulatory compliance for patient data.", "Disaster recovery planning and automation script development."] },
+        { role: "Senior Software Engineer", company: "Abdin Pharmacies", url: "https://abdinpharmacies.com", period: "Apr 2026 — Present", type: "Full Time", tasks: ["Odoo 17, 18, and 19 module development and customization using Python.", "Collaborate with functional consultants to translate business requirements into architecture.", "Version control (Git) for clean, maintainable, and debuggable code."] },
+        { role: "Senior System Administrator", company: "Dar Elteb Hospital", url: "https://daraltebsohag.com", period: "Jul 2025 — Mar 2026", type: "Full Time", tasks: ["Manage, monitor, and maintain server, network, and application integrity.", "Ensure data security and regulatory compliance for patient data.", "Disaster recovery planning and automation script development."] },
         { role: "IT Specialist", company: "EDGE Pro", url: "https://edge-pro.com", period: "Oct 2023 — Mar 2026", type: "Full Time", tasks: ["Technical support for digital transformation projects at the Egyptian Endowments Authority.", "Remote troubleshooting and system diagnostics."] },
         { role: "Senior Web Developer", company: "Tech Web Innovations", url: "https://techwebinnovations.com", period: "Sep 2024 — Aug 2025", type: "Remote", tasks: ["Design and develop customized websites using WordPress, WooCommerce and Divi.", "Develop new features and functionalities based on client business requirements.", "Manage website updates, maintenance, and troubleshooting."] },
-        { role: "Full Stack Developer", company: "Smart Medical Solutions", url: "https://smartmedicalsolutions.store", period: "Mar 2023 — Aug 2024", type: "Freelance", tasks: ["Designed and built website front-end and back-end architecture.", "Generated WordPress themes and plugins.", "Conducted performance tests and monitored live website."] },
-        { role: "Front-End Developer", company: "Share-In", url: "https://www.share-in.net", period: "Jan 2021 — Dec 2021", type: "Hybrid", tasks: ["Designed and developed company website.", "Wrote code using HTML, CSS, JavaScript, PHP, and MySQL.", "Ensured website accessibility on all devices and browsers."] }
+        { role: "Front-End Developer", company: "Share-In", url: "https://share-in-agency.com", period: "Jan 2021 — Dec 2021", type: "Hybrid", tasks: ["Designed and developed company website.", "Wrote code using HTML, CSS, JavaScript, PHP, and MySQL.", "Ensured website accessibility on all devices and browsers."] }
       ]
     },
     education: {
@@ -67,7 +66,7 @@ const translations = {
         { name: "AI Nexus", desc: "AI Tools Platform", url: "https://ainexusca.com", img: "assets/img/masonry-portfolio/AI Nexuca-Page1.png", tags: ["Web", "App"] },
         { name: "My Ain", desc: "B2B E-commerce Platform", url: "https://myain.com", img: "assets/img/masonry-portfolio/Ain Arabia.png", tags: ["Web", "App"] },
         { name: "Archi-Home", desc: "Home Renovation Website", url: "https://www.archihome.ca", img: "assets/img/masonry-portfolio/ArchiHome-Page1.png", tags: ["Web"] },
-        { name: "Share-In", desc: "Marketing & Advertising", url: "https://sites.google.com/view/share-in-agency/share-in", img: "assets/img/masonry-portfolio/Share-In website.png", tags: ["Web"] },
+        { name: "Share-In", desc: "Marketing & Advertising", url: "https://share-in-agency.com", img: "assets/img/masonry-portfolio/Share-In website.png", tags: ["Web"] },
         { name: "Tech Web Innovations", desc: "Web Agency Website", url: "https://techwebinnovations.com", img: "assets/img/masonry-portfolio/techwebinnovations screenshot.png", tags: ["Web"] },
         { name: "Cotton Upp", desc: "Clothes Brand E-commerce", url: "https://cottonupp.com", img: "assets/img/masonry-portfolio/Cotton Upp.png", tags: ["Web"] }
       ]
@@ -119,12 +118,11 @@ const translations = {
       title: "الخبرات",
       subtitle: "مسيرتي المهنية",
       jobs: [
-        { role: "مهندس برمجيات أول", company: "صيدليات عابدين", url: "https://abdin.com", period: "أبريل 2026 — الحالي", type: "دوام كامل", tasks: ["تطوير وتخصيص وحدات أودو 17 و18 و19 باستخدام بايثون.", "التعاون مع المستشارين لتحويل متطلبات الأعمال إلى هيكل تقني.", "إدارة الإصدارات باستخدام Git."] },
-        { role: "مدير أنظمة أول", company: "مستشفى دار الطب", url: "https://dar-elteb.com", period: "يوليو 2025 — مارس 2026", type: "دوام كامل", tasks: ["إدارة ومراقبة وصيانة الخوادم والشبكات.", "ضمان أمان البيانات والامتثال التنظيمي.", "تخطيط التعافي من الكوارث وتطوير النصوص البرمجية."] },
+        { role: "مهندس برمجيات أول", company: "صيدليات عابدين", url: "https://abdinpharmacies.com", period: "أبريل 2026 — الحالي", type: "دوام كامل", tasks: ["تطوير وتخصيص وحدات أودو 17 و18 و19 باستخدام بايثون.", "التعاون مع المستشارين لتحويل متطلبات الأعمال إلى هيكل تقني.", "إدارة الإصدارات باستخدام Git."] },
+        { role: "مدير أنظمة أول", company: "مستشفى دار الطب", url: "https://daraltebsohag.com", period: "يوليو 2025 — مارس 2026", type: "دوام كامل", tasks: ["إدارة ومراقبة وصيانة الخوادم والشبكات.", "ضمان أمان البيانات والامتثال التنظيمي.", "تخطيط التعافي من الكوارث وتطوير النصوص البرمجية."] },
         { role: "أخصائي تكنولوجيا المعلومات", company: "EDGE Pro", url: "https://edge-pro.com", period: "أكتوبر 2023 — مارس 2026", type: "دوام كامل", tasks: ["دعم تقني لمشاريع التحول الرقمي.", "استكشاف الأخطاء عن بُعد وتشخيص الأنظمة."] },
         { role: "مطور ويب أول", company: "Tech Web Innovations", url: "https://techwebinnovations.com", period: "سبتمبر 2024 — أغسطس 2025", type: "عن بُعد", tasks: ["تصميم وتطوير مواقع مخصصة باستخدام ووردبريس.", "تطوير ميزات جديدة بناءً على متطلبات العملاء.", "إدارة تحديثات المواقع والصيانة."] },
-        { role: "مطور ويب متكامل", company: "Smart Medical Solutions", url: "https://smartmedicalsolutions.store", period: "مارس 2023 — أغسطس 2024", type: "عمل حر", tasks: ["تصميم وبناء الواجهة الأمامية والخلفية.", "إنشاء قوالب وإضافات ووردبريس.", "إجراء اختبارات الأداء ومراقبة الموقع."] },
-        { role: "مطور واجهات أمامية", company: "Share-In", url: "https://www.share-in.net", period: "يناير 2021 — ديسمبر 2021", type: "هجين", tasks: ["تصميم وتطوير موقع الشركة.", "كتابة الأكواد باستخدام HTML, CSS, JavaScript.", "ضمان توافق الموقع مع جميع الأجهزة."] }
+        { role: "مطور واجهات أمامية", company: "Share-In", url: "https://share-in-agency.com", period: "يناير 2021 — ديسمبر 2021", type: "هجين", tasks: ["تصميم وتطوير موقع الشركة.", "كتابة الأكواد باستخدام HTML, CSS, JavaScript.", "ضمان توافق الموقع مع جميع الأجهزة."] }
       ]
     },
     education: {
@@ -145,7 +143,7 @@ const translations = {
         { name: "AI Nexus", desc: "منصة أدوات الذكاء الاصطناعي", url: "https://ainexusca.com", img: "assets/img/masonry-portfolio/AI Nexuca-Page1.png", tags: ["Web", "App"] },
         { name: "My Ain", desc: "منصة تجارة إلكترونية B2B", url: "https://myain.com", img: "assets/img/masonry-portfolio/Ain Arabia.png", tags: ["Web", "App"] },
         { name: "Archi-Home", desc: "موقع تجديد المنازل", url: "https://www.archihome.ca", img: "assets/img/masonry-portfolio/ArchiHome-Page1.png", tags: ["Web"] },
-        { name: "Share-In", desc: "تسويق وإعلان", url: "https://sites.google.com/view/share-in-agency/share-in", img: "assets/img/masonry-portfolio/Share-In website.png", tags: ["Web"] },
+        { name: "Share-In", desc: "تسويق وإعلان", url: "https://share-in-agency.com", img: "assets/img/masonry-portfolio/Share-In website.png", tags: ["Web"] },
         { name: "Tech Web Innovations", desc: "موقع وكالة ويب", url: "https://techwebinnovations.com", img: "assets/img/masonry-portfolio/techwebinnovations screenshot.png", tags: ["Web"] },
         { name: "Cotton Upp", desc: "متجر ملابس إلكتروني", url: "https://cottonupp.com", img: "assets/img/masonry-portfolio/Cotton Upp.png", tags: ["Web"] }
       ]

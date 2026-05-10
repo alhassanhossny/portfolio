@@ -34,7 +34,7 @@
     const hero = $('#hero-content');
     if (hero) {
       hero.innerHTML = `
-        <div class="hero-greeting">${d.hero.greeting}</div>
+        <!-- <div class="hero-greeting">${d.hero.greeting}</div> -->
         <h1 class="hero-name">${d.hero.name}</h1>
         <p class="hero-title">${d.hero.title}</p>
         <p class="hero-summary">${d.hero.summary}</p>
