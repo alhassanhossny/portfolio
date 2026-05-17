@@ -63,6 +63,7 @@ const translations = {
       subtitle: "A selection of my recent work",
       filter_all: "All",
       items: [
+        { name: "Alqudrat Altkamuliya", desc: "Corporate Website", url: "https://alqudrataltkamuliya.com/", img: "assets/img/masonry-portfolio/Alqudrat.png", tags: ["Web"] },
         { name: "AI Nexus", desc: "AI Tools Platform", url: "https://ainexusca.com", img: "assets/img/masonry-portfolio/AI Nexuca-Page1.png", tags: ["Web", "App"] },
         { name: "My Ain", desc: "B2B E-commerce Platform", url: "https://myain.com", img: "assets/img/masonry-portfolio/Ain Arabia.png", tags: ["Web", "App"] },
         { name: "Archi-Home", desc: "Home Renovation Website", url: "https://www.archihome.ca", img: "assets/img/masonry-portfolio/ArchiHome-Page1.png", tags: ["Web"] },
@@ -140,6 +141,7 @@ const translations = {
       subtitle: "مجموعة من أحدث أعمالي",
       filter_all: "الكل",
       items: [
+        { name: "القدرات التكاملية", desc: "موقع شركة", url: "https://alqudrataltkamuliya.com/", img: "assets/img/masonry-portfolio/Alqudrat.png", tags: ["Web"] },
         { name: "AI Nexus", desc: "منصة أدوات الذكاء الاصطناعي", url: "https://ainexusca.com", img: "assets/img/masonry-portfolio/AI Nexuca-Page1.png", tags: ["Web", "App"] },
         { name: "My Ain", desc: "منصة تجارة إلكترونية B2B", url: "https://myain.com", img: "assets/img/masonry-portfolio/Ain Arabia.png", tags: ["Web", "App"] },
         { name: "Archi-Home", desc: "موقع تجديد المنازل", url: "https://www.archihome.ca", img: "assets/img/masonry-portfolio/ArchiHome-Page1.png", tags: ["Web"] },
