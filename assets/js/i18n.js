@@ -63,13 +63,15 @@ const translations = {
       subtitle: "A selection of my recent work",
       filter_all: "All",
       items: [
+        { name: "Task Management System", desc: "Enterprise Task Management", url: "https://github.com/alhassanhossny/Task-Management-System", img: "assets/img/masonry-portfolio/Task-Management-System.png", tags: ["App", "DevOps"] },
         { name: "Alqudrat Altkamuliya", desc: "Corporate Website", url: "https://alqudrataltkamuliya.com/", img: "assets/img/masonry-portfolio/Alqudrat.png", tags: ["Web"] },
-        { name: "AI Nexus", desc: "AI Tools Platform", url: "https://ainexusca.com", img: "assets/img/masonry-portfolio/AI Nexuca-Page1.png", tags: ["Web", "App"] },
+        { name: "AI-Vortex", desc: "AI Chat Assistant Landing Page", url: "https://github.com/alhassanhossny/AI-Vortex-Website", img: "assets/img/masonry-portfolio/AI-Vortex-Website.png", tags: ["Web"] },
         { name: "My Ain", desc: "B2B E-commerce Platform", url: "https://myain.com", img: "assets/img/masonry-portfolio/Ain Arabia.png", tags: ["Web", "App"] },
         { name: "Archi-Home", desc: "Home Renovation Website", url: "https://www.archihome.ca", img: "assets/img/masonry-portfolio/ArchiHome-Page1.png", tags: ["Web"] },
+        { name: "AAAS", desc: "Automated Academic Advising System", url: "https://github.com/alhassanhossny/Graduation-Project", img: "assets/img/masonry-portfolio/Graduation-Project-AAAS.png", tags: ["App"] },
         { name: "Share-In", desc: "Marketing & Advertising", url: "https://share-in-agency.com", img: "assets/img/masonry-portfolio/Share-In website.png", tags: ["Web"] },
-        { name: "Tech Web Innovations", desc: "Web Agency Website", url: "https://techwebinnovations.com", img: "assets/img/masonry-portfolio/techwebinnovations screenshot.png", tags: ["Web"] },
-        { name: "Cotton Upp", desc: "Clothes Brand E-commerce", url: "https://cottonupp.com", img: "assets/img/masonry-portfolio/Cotton Upp.png", tags: ["Web"] }
+        { name: "System Admin Helper", desc: "Linux SysAdmin Management Tools", url: "https://github.com/alhassanhossny/System-Admin-Helper", img: "assets/img/masonry-portfolio/System-Admin-Helper.png", tags: ["DevOps"] },
+        { name: "Tech Web Innovations", desc: "Web Agency Website", url: "https://techwebinnovations.com", img: "assets/img/masonry-portfolio/techwebinnovations screenshot.png", tags: ["Web"] }
       ]
     },
     contact: {
@@ -141,13 +143,15 @@ const translations = {
       subtitle: "مجموعة من أحدث أعمالي",
       filter_all: "الكل",
       items: [
+        { name: "نظام إدارة المهام", desc: "نظام إدارة مهام مؤسسي", url: "https://github.com/alhassanhossny/Task-Management-System", img: "assets/img/masonry-portfolio/Task-Management-System.png", tags: ["App", "DevOps"] },
         { name: "القدرات التكاملية", desc: "موقع شركة", url: "https://alqudrataltkamuliya.com/", img: "assets/img/masonry-portfolio/Alqudrat.png", tags: ["Web"] },
-        { name: "AI Nexus", desc: "منصة أدوات الذكاء الاصطناعي", url: "https://ainexusca.com", img: "assets/img/masonry-portfolio/AI Nexuca-Page1.png", tags: ["Web", "App"] },
+        { name: "AI-Vortex", desc: "صفحة هبوط مساعد ذكاء اصطناعي", url: "https://github.com/alhassanhossny/AI-Vortex-Website", img: "assets/img/masonry-portfolio/AI-Vortex-Website.png", tags: ["Web"] },
         { name: "My Ain", desc: "منصة تجارة إلكترونية B2B", url: "https://myain.com", img: "assets/img/masonry-portfolio/Ain Arabia.png", tags: ["Web", "App"] },
         { name: "Archi-Home", desc: "موقع تجديد المنازل", url: "https://www.archihome.ca", img: "assets/img/masonry-portfolio/ArchiHome-Page1.png", tags: ["Web"] },
+        { name: "AAAS", desc: "نظام الإرشاد الأكاديمي الآلي", url: "https://github.com/alhassanhossny/Graduation-Project", img: "assets/img/masonry-portfolio/Graduation-Project-AAAS.png", tags: ["App"] },
         { name: "Share-In", desc: "تسويق وإعلان", url: "https://share-in-agency.com", img: "assets/img/masonry-portfolio/Share-In website.png", tags: ["Web"] },
-        { name: "Tech Web Innovations", desc: "موقع وكالة ويب", url: "https://techwebinnovations.com", img: "assets/img/masonry-portfolio/techwebinnovations screenshot.png", tags: ["Web"] },
-        { name: "Cotton Upp", desc: "متجر ملابس إلكتروني", url: "https://cottonupp.com", img: "assets/img/masonry-portfolio/Cotton Upp.png", tags: ["Web"] }
+        { name: "أدوات مدير النظام", desc: "أدوات إدارة أنظمة لينكس", url: "https://github.com/alhassanhossny/System-Admin-Helper", img: "assets/img/masonry-portfolio/System-Admin-Helper.png", tags: ["DevOps"] },
+        { name: "Tech Web Innovations", desc: "موقع وكالة ويب", url: "https://techwebinnovations.com", img: "assets/img/masonry-portfolio/techwebinnovations screenshot.png", tags: ["Web"] }
       ]
     },
     contact: {
